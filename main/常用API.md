@@ -24,7 +24,7 @@ LinkedList<Object> queue = new LinkedList<>();
 //出队
 poll()
 //入队
-add()
+offer(E enum)
 //size
 size()
 //获取对头元素，但不出队
