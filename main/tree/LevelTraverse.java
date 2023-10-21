@@ -12,10 +12,14 @@ public class LevelTraverse implements Traverse {
         ArrayList<Integer> res = new ArrayList<>();
         que.offer(root);
         while (!que.isEmpty()) {
-            TreeNode node = que.poll();
-            res.add(node.value);
-            if (node.left != null) que.offer(node.left);
-            if (node.right != null) que.offer(node.right);
+            int size = que.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = que.poll();
+                if(node == null) break;
+                res.add(node.value);
+                if (node.left != null) que.offer(node.left);
+                if (node.right != null) que.offer(node.right);
+            }
         }
         return res;
     }
